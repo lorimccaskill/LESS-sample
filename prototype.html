@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Prototype: Workspace Access Point</title>
+<link href="css/prototype.css" type="text/css" rel="stylesheet">
+</head>
+
+<body class="tui">
+
+  <nav id="wsAccessPoint"><a href="javascript:toggleAccessMenu();" class="wsNameCurrent"><span class="multiUserWS">TB Bond Fund</span></a>
+        <div class="wsAccessMenu">
+        <ul class="wsNavigation">
+              <li><span class="summaryView"> </span></li>
+              <li><span class="listView"> </span></li>
+              <li><span class="circleView"> </span></li>
+        </ul>
+        <ul class="wsNameList">
+              <li><span class="singleUserWS">Workspace Sample 1</span></li>
+              <li><span class="organizationWS">Workspace Sample 2</span></li>
+              <li><span class="multiUserWS">Workspace Sample 3</span></li>
+              <li><span class="myWorkspace">Workspace Sample 4</span></li>
+              <li><span class="add-button"></span><span>Create New Workspace</span></li>
+              <li>See All Workspaces</li>
+        </ul>
+  </div>
+  </nav>
+
+<script type="text/javascript">
+  function toggleAccessMenu(){
+    var menuLink = document.getElementById('wsAccessPoint');
+    //check if 'open' class is used
+    if (menuLink.className.indexOf('open') > -1 ) {
+      //remove 'open' class
+      menuLink.className = menuLink.className.replace('open','');
+    }
+    else {
+      //add 'open' class
+      menuLink.className +='open';
+    }
+  }
+
+</script>
+
+</body>
+</html>

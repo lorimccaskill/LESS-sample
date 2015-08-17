@@ -1,0 +1,342 @@
+/* ========= COLORS ========= */
+// S&P Transformational UI Color Palette
+// -------------------------------------
+// The variable names match the color names on the design tearsheet at:
+// https://spwiki.portal.frogdesign.com/display/NxGenBuild/Color+Palette
+
+// Base Colors
+@black:					#000;
+@dark-gray:				#141414;
+@dark-gray-alt-1:		#151717;
+@dark-gray-alt-2:		#171818;
+@medium-dark-gray:		#1F2121;
+@medium-dark-gray-alt-1:#2C2E2E;
+@medium-dark-gray-alt-2:#202222;
+@medium-dark-gray-alt-3:#363636;
+@cool-gray:				#5B5E5E;
+@cool-gray-alt-1:		#525252;
+@neutral-gray:			#808080;
+@neutral-gray-alt-1:	#494848;
+@neutral-gray-alt-2:	#636363;
+@light-gray:			#CBCBCB;
+@light-gray-alt-1:		#BDC1C3;
+@white:					#FFF;
+
+@plain-text:			#9A9A9A;
+@link-text:				@light-gray;
+
+@scrollbar-hex:			#9A9A9A;
+
+// Base Colors in RGB -- only needed when a mixin uses rgba
+@black-rgb:				red(@black),green(@black),blue(@black);
+@white-rgb:				red(@white),green(@white),blue(@white);
+@neutral-gray-alt-2-rgb:red(@neutral-gray-alt-2),green(@neutral-gray-alt-2),blue(@neutral-gray-alt-2);
+@dark-gray-alt-2-rgb:	red(@dark-gray-alt-2),green(@dark-gray-alt-2),blue(@dark-gray-alt-2);
+@medium-dark-gray-alt-1-rgb:red(@medium-dark-gray-alt-1),green(@medium-dark-gray-alt-1),blue(@medium-dark-gray-alt-1);
+@medium-dark-gray-alt-2-rgb:red(@medium-dark-gray-alt-2),green(@medium-dark-gray-alt-2),blue(@medium-dark-gray-alt-2);
+@medium-dark-gray-alt-3-rgb:red(@medium-dark-gray-alt-3),green(@medium-dark-gray-alt-3),blue(@medium-dark-gray-alt-3);
+
+// Accent Colors
+@active-blue:			#07BCDE;
+@link-blue:				#1131CF;
+@label-red:				#8D3030;
+@sp-red:				#E51937;
+@error:					#ED2D00;
+@notification-flag:		#E8B84A;
+@progess-bar-top:		#37DBFF;
+@progess-bar-bottom:	#058FFF;
+@highlight:				#E8B84A;
+
+// Avatar Colors
+@avatar-1:				@active-blue;
+@avatar-2:				#732034;
+@avatar-3:				#457237;
+@avatar-4:				#6D326F;
+@avatar-5:				#BEB630;
+@avatar-6:				#738DE3;
+@avatar-7:				#9C3B33;
+@avatar-8:				#3C2F8A;
+@avatar-9:				#326F67;
+@avatar-10:				#9573E3;
+@avatar-11:				#EA794D;
+@avatar-12:				#798248;
+
+// Gain-Loss
+@gain-link:				@active-blue;
+@gain-nolink:			#00839B;
+@loss-link:				#D91A36;
+@loss-nolink:			#A11429;
+@gain:					@gain-link;
+@loss:					@loss-link;
+
+// For the non-American English speakers...
+@dark-grey:				@dark-gray;
+@dark-grey-alt-1:		@dark-gray-alt-1;
+@dark-grey-alt-2:		@dark-gray-alt-2;
+@medium-dark-grey:		@medium-dark-gray;
+@medium-dark-grey-alt-1:@medium-dark-gray-alt-1;
+@medium-dark-grey-alt-2:@medium-dark-gray-alt-2;
+@cool-grey:				@cool-gray;
+@neutral-grey:			@neutral-gray;
+@neutral-grey-alt-1:	@neutral-gray-alt-1;
+@neutral-grey-alt-2:	@neutral-gray-alt-2;
+@light-grey:			@light-gray;
+@light-grey-alt-1:		@light-gray-alt-1;
+
+.black-rgb {
+	background-color: ~"rgba(@{black-rgb}, 1)";
+}
+.white-rgb {
+	background-color: ~"rgba(@{white-rgb}, 1)";
+}
+
+/* ========= TYPE ========= */
+.arial() {
+	font-family: "Arial", sans-serif;
+	font-weight: 400;
+	font-stretch: normal;
+}
+
+.arial(bold) {
+	font-family: "Arial Bold", "Arial", sans-serif;
+	font-weight: 600;
+	font-stretch: normal;
+}
+
+.arial(italic) {
+	font-family: "Arial Italic", "Arial", sans-serif;
+	font-weight: 400;
+	font-stretch: normal;
+	font-style: italic;
+}
+
+/* ========= SPRITE ICONS ========= */
+.mainSprite{
+	display: inline-block;
+	background: no-repeat url("../img/mainSprite.png") 0 0;
+	cursor:pointer;
+	&.disable {cursor: default;}
+}
+.infoIconSmall{
+	.mainSprite;
+	background-position: -640px 0;
+	width: 14px;
+	height: 15px;
+	&:hover {background-position: -640px -20px;}
+	&.disable:hover {background-position: -640px 0;}
+}
+.workspaceListIconSmall{
+	.mainSprite;
+	background-position: -660px 0;
+	width: 17px;
+	height: 15px;
+	&:hover {background-position: -660px -20px;}
+	&.disable:hover {background-position: -660px 0;}
+}
+.workspaceCircleIconSmall{
+	.mainSprite;
+	background-position: -680px 0;
+	width: 15px;
+	height: 16px;
+	&:hover {background-position: -680px -20px;}
+	&.disable:hover {background-position: -680px 0;}
+}
+.myWorkspaceIcon{
+	.mainSprite;
+	background-position: -700px 0;
+	width: 13px;
+	height: 14px;
+}
+.singleUserWSIcon{
+	.mainSprite;
+	background-position: -720px 0;
+	width: 6px;
+	height: 11px;
+	&.archived {background-position: -720px -20px;}
+}
+.multiUserWSIcon{
+	.mainSprite;
+	background-position: -740px 0;
+	width: 13px;
+	height: 12px;
+	&.archived {background-position: -740px -20px;}
+}
+.organizationWSIcon{
+	.mainSprite;
+	background-position: -760px 0;
+	width: 14px;
+	height: 13px;
+	&.archived {background-position: -760px -20px;}
+}
+
+/* ========= GLOBAL ICONS (CSS ONLY) ========= */
+.arrowRightSolid, .arrowLeftSolid, .arrowTopSolid, .arrowBottomSolid{
+	display: inline-block;
+	width: 0;
+	height: 0;	
+}
+.arrowRightSolid, .arrowLeftSolid{ /*defaut size (4px) can changed by border-width override*/
+	border-top: 4px solid transparent;
+	border-bottom: 4px solid transparent;	
+}
+.arrowTopSolid, .arrowBottomSolid{ /*defaut size (4px) can changed by border-width override*/
+	border-left: 4px solid transparent;
+	border-right: 4px solid transparent;	
+}
+.arrowRightSolid {
+	border-left: 4px solid @white; /*default color (white) can be changed by border-left-color override*/
+	margin-left: 4px;
+}
+.arrowLeftSolid {
+	border-right: 4px solid @white; /*default color (white) can be changed by border-right-color override*/
+	margin-right: 4px;
+}
+.arrowTopSolid {border-bottom: 4px solid @white;} /*default color (white) can be changed by border-bottom-color override*/
+.arrowBottomSolid {border-top: 4px solid @white;} /*default color (white) can be changed by border-top-color override*/
+
+/* ========= MIXINS ========= */
+// Gradient
+// 
+// Pick a type of a gradient you want to have and put colours as arguments.
+// You can put either two or three colours. In the first case
+// you type only the gradient's colours. Three arguments gradient mixins
+// will use the third colour as background-color.
+// 
+// The default class - .gradient - is the same as .vertical-gradient.
+// 
+// You can choose from four types of gradients:
+// 1. Vertical - colour will change from top to bottom.
+// 2. Horizontal - change is from left to right.
+// 3. Diagonal - from top-left to bottom-right.
+// 4. Radial - from the centre of an element to its borders.
+// 
+// BROWSERS SUPPORT
+// IE10 and every other except Opera Mini.
+// Some gradients can be achieved in older IE by using non-standard properties.
+
+.grad(@type, @dir, @dir2, @color1, @stop1, @color2, @stop2, @color3) when (iscolor(@color3)), not (iscolor(@color3)) and not (isstring(@color3)) {
+  background-color: @color3;
+  background-image: ~"@{type}(@{dir}," @color1 @stop1~","@color2 @stop2~" )";
+}
+.grad(@type, @dir, @dir2, @color1, @stop1, @color2, @stop2, @url) when not (iscolor(@url)) and (isstring(@url)) {
+  background-color: transparent;
+  background-image: ~"@{type}(@{dir}," @color1 @stop1~","@color2 @stop2~" ), url('@{url}')";
+}
+
+.gradient (@dir, @color1, @stop1, @color2, @stop2, @color3:transparent) when (isstring(@dir)) and (@dir = 'to bottom') {
+  @type: 'linear-gradient';
+  @dir2: 'top';
+  @ms-type: 0;
+  .grad(@type, @dir, @dir2, @color1, @stop1, @color2, @stop2, @color3);
+}
+.gradient (@dir, @color1, @stop1, @color2, @stop2, @color3:transparent) when (isstring(@dir)) and (@dir = 'to top') {
+  @type: 'linear-gradient';
+  @dir2: 'bottom';
+  @ms-type: 0;
+  .grad(@type, @dir, @dir2, @color1, @stop1, @color2, @stop2, @color3);
+}
+.gradient (@dir, @color1, @stop1, @color2, @stop2, @color3:transparent) when (isstring(@dir)) and (@dir = 'to right') {
+  @type: 'linear-gradient';
+  @dir2: 'left';
+  @ms-type: 1;
+  .grad(@type, @dir, @dir2, @color1, @stop1, @color2, @stop2, @color3);
+}
+.gradient (@dir, @color1, @stop1, @color2, @stop2, @color3:transparent) when (isstring(@dir)) and (@dir = 'to left') {
+  @type: 'linear-gradient';
+  @dir2: 'right';
+  @ms-type: 1;
+  .grad(@type, @dir, @dir2, @color1, @stop1, @color2, @stop2, @color3);
+}
+.gradient (@dir, @color1, @stop1, @color2, @stop2, @color3:transparent) when (isstring(@dir)) and (@dir = 'to bottom right') {
+  @type: 'linear-gradient';
+  @dir2: 'top left';
+  @ms-type: 1;
+  .grad(@type, @dir, @dir2, @color1, @stop1, @color2, @stop2, @color3);
+}
+.gradient (@dir, @color1, @stop1, @color2, @stop2, @color3:transparent) when (isstring(@dir)) and (@dir = 'to bottom left') {
+  @type: 'linear-gradient';
+  @dir2: 'top right';
+  @ms-type: 1;
+  .grad(@type, @dir, @dir2, @color1, @stop1, @color2, @stop2, @color3);
+}
+.gradient (@dir, @color1, @stop1, @color2, @stop2, @color3:transparent) when (isstring(@dir)) and (@dir = 'to top right') {
+  @type: 'linear-gradient';
+  @dir2: 'bottom left';
+  @ms-type: 1;
+  .grad(@type, @dir, @dir2, @color1, @stop1, @color2, @stop2, @color3);
+}
+.gradient (@dir, @color1, @stop1, @color2, @stop2, @color3:transparent) when (isstring(@dir)) and (@dir = 'to top left') {
+  @type: 'linear-gradient';
+  @dir2: 'bottom right';
+  @ms-type: 1;
+  .grad(@type, @dir, @dir2, @color1, @stop1, @color2, @stop2, @color3);
+}
+.gradient (@dir, @color1, @stop1, @color2, @stop2, @color3:transparent) when (isstring(@dir)) and (@dir = 'at center') {
+  @type: 'radial-gradient';
+  @dir2: 'center';
+  @ms-type: 1;
+  .grad(@type, @dir, @dir2, @color1, @stop1, @color2, @stop2, @color3);
+}
+.radial-gradient (@dir, @color1, @stop1, @color2, @stop2, @color3:transparent) { // Allows for numerical positioning
+  @type: 'radial-gradient';
+  @dir1: ~"at @{dir}";
+  @dir2: @dir;
+  @ms-type: 1;
+  .grad(@type, @dir1, @dir2, @color1, @stop1, @color2, @stop2, @color3);
+}
+.gradient (@dir, @color1, @stop1, @color2, @stop2, @color3:transparent) when (isnumber(@dir)) {
+  @type: 'linear-gradient';
+  @dirA: ~"@{dir}deg";
+  @dir2: @dir - 180;
+  @dir2a: ~"@{dir2}deg";
+  @ms-type: 1;
+  .grad(@type, @dirA, @dir2a, @color1, @stop1, @color2, @stop2, @color3);
+}
+
+//Round similar corners
+.border-top-radius(@radius) {border-top-left-radius: @radius; border-top-right-radius: @radius;}
+.border-bottom-radius(@radius) {border-bottom-left-radius: @radius; border-bottom-right-radius: @radius;}
+.border-left-radius(@radius) {border-top-left-radius: @radius; border-bottom-left-radius: @radius;}
+.border-right-radius(@radius) {border-top-right-radius: @radius; border-bottom-right-radius: @radius;}
+
+
+.ellipsis() {
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+
+.tabMenu{
+	.gradient('to bottom', @medium-dark-gray-alt-3, 0%, @medium-dark-gray-alt-2, 100%);
+	box-shadow: inset 0 -1px @dark-gray-alt-2, inset 0 -2px @medium-dark-gray;
+	
+	.tabLabel{
+		box-shadow: inset -1px 0 @medium-dark-gray-alt-3, inset -2px 0 @dark-gray-alt-2;
+		
+		&:last-of-type {box-shadow: none;}
+	}
+}
+
+.norgiMenu{
+	z-index: 5000;
+	height: auto;
+	min-width: 75px;
+	border: 1px solid @black;
+	border-radius: 3px;
+	box-sizing: border-box;
+	.gradient('to bottom', @medium-dark-gray-alt-1, 0%, @dark-gray-alt-1, 100%);
+	position: absolute;
+	overflow: hidden;
+	.menuLabel{
+		display: block;
+		box-shadow: inset 0 -1px @black, inset 0 1px ~"rgba(@{medium-dark-gray-alt-3-rgb}, 0.45)";
+		padding: 9px 4px;
+		.arial();
+		font-size: 1.2rem;
+		line-height: 1;
+		text-transform: uppercase;
+		color: @link-text;
+		cursor: pointer;
+      	&:hover {color: @white;}
+	}
+}

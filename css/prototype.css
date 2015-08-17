@@ -1,0 +1,551 @@
+/* ========= COLORS ========= */
+.black-rgb {
+  background-color: rgba(0, 0, 0, 1);
+}
+.white-rgb {
+  background-color: rgba(255, 255, 255, 1);
+}
+/* ========= TYPE ========= */
+/* ========= SPRITE ICONS ========= */
+.mainSprite {
+  display: inline-block;
+  background: no-repeat url("../img/mainSprite.png") 0 0;
+  cursor: pointer;
+}
+.mainSprite.disable {
+  cursor: default;
+}
+.infoIconSmall {
+  display: inline-block;
+  background: no-repeat url("../img/mainSprite.png") 0 0;
+  cursor: pointer;
+  background-position: -640px 0;
+  width: 14px;
+  height: 15px;
+}
+.infoIconSmall.disable {
+  cursor: default;
+}
+.infoIconSmall:hover {
+  background-position: -640px -20px;
+}
+.infoIconSmall.disable:hover {
+  background-position: -640px 0;
+}
+.workspaceListIconSmall {
+  display: inline-block;
+  background: no-repeat url("../img/mainSprite.png") 0 0;
+  cursor: pointer;
+  background-position: -660px 0;
+  width: 17px;
+  height: 15px;
+}
+.workspaceListIconSmall.disable {
+  cursor: default;
+}
+.workspaceListIconSmall:hover {
+  background-position: -660px -20px;
+}
+.workspaceListIconSmall.disable:hover {
+  background-position: -660px 0;
+}
+.workspaceCircleIconSmall {
+  display: inline-block;
+  background: no-repeat url("../img/mainSprite.png") 0 0;
+  cursor: pointer;
+  background-position: -680px 0;
+  width: 15px;
+  height: 16px;
+}
+.workspaceCircleIconSmall.disable {
+  cursor: default;
+}
+.workspaceCircleIconSmall:hover {
+  background-position: -680px -20px;
+}
+.workspaceCircleIconSmall.disable:hover {
+  background-position: -680px 0;
+}
+.myWorkspaceIcon {
+  display: inline-block;
+  background: no-repeat url("../img/mainSprite.png") 0 0;
+  cursor: pointer;
+  background-position: -700px 0;
+  width: 13px;
+  height: 14px;
+}
+.myWorkspaceIcon.disable {
+  cursor: default;
+}
+.singleUserWSIcon {
+  display: inline-block;
+  background: no-repeat url("../img/mainSprite.png") 0 0;
+  cursor: pointer;
+  background-position: -720px 0;
+  width: 6px;
+  height: 11px;
+}
+.singleUserWSIcon.disable {
+  cursor: default;
+}
+.singleUserWSIcon.archived {
+  background-position: -720px -20px;
+}
+.multiUserWSIcon {
+  display: inline-block;
+  background: no-repeat url("../img/mainSprite.png") 0 0;
+  cursor: pointer;
+  background-position: -740px 0;
+  width: 13px;
+  height: 12px;
+}
+.multiUserWSIcon.disable {
+  cursor: default;
+}
+.multiUserWSIcon.archived {
+  background-position: -740px -20px;
+}
+.organizationWSIcon {
+  display: inline-block;
+  background: no-repeat url("../img/mainSprite.png") 0 0;
+  cursor: pointer;
+  background-position: -760px 0;
+  width: 14px;
+  height: 13px;
+}
+.organizationWSIcon.disable {
+  cursor: default;
+}
+.organizationWSIcon.archived {
+  background-position: -760px -20px;
+}
+/* ========= GLOBAL ICONS (CSS ONLY) ========= */
+.arrowRightSolid,
+.arrowLeftSolid,
+.arrowTopSolid,
+.arrowBottomSolid {
+  display: inline-block;
+  width: 0;
+  height: 0;
+}
+.arrowRightSolid,
+.arrowLeftSolid {
+  /*defaut size (4px) can changed by border-width override*/
+  border-top: 4px solid transparent;
+  border-bottom: 4px solid transparent;
+}
+.arrowTopSolid,
+.arrowBottomSolid {
+  /*defaut size (4px) can changed by border-width override*/
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+}
+.arrowRightSolid {
+  border-left: 4px solid #ffffff;
+  /*default color (white) can be changed by border-left-color override*/
+  margin-left: 4px;
+}
+.arrowLeftSolid {
+  border-right: 4px solid #ffffff;
+  /*default color (white) can be changed by border-right-color override*/
+  margin-right: 4px;
+}
+.arrowTopSolid {
+  border-bottom: 4px solid #ffffff;
+}
+/*default color (white) can be changed by border-bottom-color override*/
+.arrowBottomSolid {
+  border-top: 4px solid #ffffff;
+}
+/*default color (white) can be changed by border-top-color override*/
+/* ========= MIXINS ========= */
+.tabMenu {
+  background-color: transparent;
+  background-image: linear-gradient(to bottom, #363636 0% , #202222 100%  );
+  box-shadow: inset 0 -1px #171818, inset 0 -2px #1f2121;
+}
+.tabMenu .tabLabel {
+  box-shadow: inset -1px 0 #363636, inset -2px 0 #171818;
+}
+.tabMenu .tabLabel:last-of-type {
+  box-shadow: none;
+}
+.norgiMenu {
+  z-index: 5000;
+  height: auto;
+  min-width: 75px;
+  border: 1px solid #000000;
+  border-radius: 3px;
+  box-sizing: border-box;
+  background-color: transparent;
+  background-image: linear-gradient(to bottom, #2c2e2e 0% , #151717 100%  );
+  position: absolute;
+  overflow: hidden;
+}
+.norgiMenu .menuLabel {
+  display: block;
+  box-shadow: inset 0 -1px #000000, inset 0 1px rgba(54, 54, 54, 0.45);
+  padding: 9px 4px;
+  font-family: "Arial", sans-serif;
+  font-weight: 400;
+  font-stretch: normal;
+  font-size: 1.2rem;
+  line-height: 1;
+  text-transform: uppercase;
+  color: #cbcbcb;
+  cursor: pointer;
+}
+.norgiMenu .menuLabel:hover {
+  color: #ffffff;
+}
+/*begin Workspace Access Point menu styles */
+html {
+  font-size: 10px;
+}
+.tui {
+  background-color: #1f2121;
+  color: #ffffff;
+  font-family: "Arial", sans-serif;
+  font-weight: 400;
+  font-stretch: normal;
+}
+.tui a {
+  color: #ffffff;
+  text-decoration: none;
+}
+nav#wsAccessPoint {
+  position: absolute;
+  top: 44px;
+  right: 120px;
+  z-index: 100;
+  text-align: right;
+  /*close .wsAccessMenu */
+}
+nav#wsAccessPoint ul {
+  margin: 0;
+  padding: 0;
+}
+nav#wsAccessPoint ul li {
+  list-style: none;
+}
+nav#wsAccessPoint a.wsNameCurrent span::before,
+nav#wsAccessPoint ul.wsNameList li span::before {
+  content: ' ';
+}
+nav#wsAccessPoint a.wsNameCurrent span.myWorkspace::before,
+nav#wsAccessPoint ul.wsNameList li span.myWorkspace::before {
+  display: inline-block;
+  background: no-repeat url("../img/mainSprite.png") 0 0;
+  cursor: pointer;
+  background-position: -700px 0;
+  width: 13px;
+  height: 14px;
+}
+nav#wsAccessPoint a.wsNameCurrent span.myWorkspace::before.disable,
+nav#wsAccessPoint ul.wsNameList li span.myWorkspace::before.disable {
+  cursor: default;
+}
+nav#wsAccessPoint a.wsNameCurrent span.singleUserWS::before,
+nav#wsAccessPoint ul.wsNameList li span.singleUserWS::before {
+  display: inline-block;
+  background: no-repeat url("../img/mainSprite.png") 0 0;
+  cursor: pointer;
+  background-position: -720px 0;
+  width: 6px;
+  height: 11px;
+}
+nav#wsAccessPoint a.wsNameCurrent span.singleUserWS::before.disable,
+nav#wsAccessPoint ul.wsNameList li span.singleUserWS::before.disable {
+  cursor: default;
+}
+nav#wsAccessPoint a.wsNameCurrent span.singleUserWS::before.archived,
+nav#wsAccessPoint ul.wsNameList li span.singleUserWS::before.archived {
+  background-position: -720px -20px;
+}
+nav#wsAccessPoint a.wsNameCurrent span.multiUserWS::before,
+nav#wsAccessPoint ul.wsNameList li span.multiUserWS::before {
+  display: inline-block;
+  background: no-repeat url("../img/mainSprite.png") 0 0;
+  cursor: pointer;
+  background-position: -740px 0;
+  width: 13px;
+  height: 12px;
+}
+nav#wsAccessPoint a.wsNameCurrent span.multiUserWS::before.disable,
+nav#wsAccessPoint ul.wsNameList li span.multiUserWS::before.disable {
+  cursor: default;
+}
+nav#wsAccessPoint a.wsNameCurrent span.multiUserWS::before.archived,
+nav#wsAccessPoint ul.wsNameList li span.multiUserWS::before.archived {
+  background-position: -740px -20px;
+}
+nav#wsAccessPoint a.wsNameCurrent span.organizationWS::before,
+nav#wsAccessPoint ul.wsNameList li span.organizationWS::before {
+  display: inline-block;
+  background: no-repeat url("../img/mainSprite.png") 0 0;
+  cursor: pointer;
+  background-position: -760px 0;
+  width: 14px;
+  height: 13px;
+}
+nav#wsAccessPoint a.wsNameCurrent span.organizationWS::before.disable,
+nav#wsAccessPoint ul.wsNameList li span.organizationWS::before.disable {
+  cursor: default;
+}
+nav#wsAccessPoint a.wsNameCurrent span.organizationWS::before.archived,
+nav#wsAccessPoint ul.wsNameList li span.organizationWS::before.archived {
+  background-position: -760px -20px;
+}
+nav#wsAccessPoint a.wsNameCurrent {
+  display: inline-block;
+  max-width: 450px;
+  font-family: "Arial", sans-serif;
+  font-weight: 400;
+  font-stretch: normal;
+  font-size: 1.7rem;
+  margin-left: 14px;
+  /*in case of long WS name, icon will line up with .wsNameList icons in open menu below*/
+  padding-right: 20px;
+  /*leaves room for arrow (span::after)*/
+  text-align: left;
+  /*needed in case of long WS name*/
+  box-shadow: 0 4px #07bcde;
+}
+nav#wsAccessPoint a.wsNameCurrent span {
+  display: inline-block;
+  width: 100%;
+  /*prepping for implementation of .ellipsis mixnin*/
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+nav#wsAccessPoint a.wsNameCurrent span::before {
+  margin-right: 10px;
+}
+nav#wsAccessPoint a.wsNameCurrent span::after {
+  content: ' ';
+  display: inline-block;
+  width: 0;
+  height: 0;
+  /*defaut size (4px) can changed by border-width override*/
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  border-top: 4px solid #ffffff;
+  border-width: 5px;
+  border-top-color: #cbcbcb;
+  position: absolute;
+  top: 6px;
+  right: 0;
+  margin-left: 10px;
+}
+nav#wsAccessPoint a.wsNameCurrent:hover span {
+  color: #07bcde;
+}
+nav#wsAccessPoint a.wsNameCurrent:hover span::after {
+  border-top-color: #07bcde;
+}
+nav#wsAccessPoint div.wsAccessMenu {
+  display: none;
+  text-align: left;
+  min-width: 200px;
+  max-width: 484px;
+  /*for long WS names*/
+}
+nav#wsAccessPoint div.wsAccessMenu ul.wsNavigation {
+  background-color: transparent;
+  background-image: linear-gradient(to bottom, #363636 0% , #202222 100%  );
+  box-shadow: inset 0 -1px #171818, inset 0 -2px #1f2121;
+  display: table;
+  width: 100%;
+  box-shadow: inset 1px 0 #000000, inset -1px 0 #000000;
+}
+nav#wsAccessPoint div.wsAccessMenu ul.wsNavigation .tabLabel {
+  box-shadow: inset -1px 0 #363636, inset -2px 0 #171818;
+}
+nav#wsAccessPoint div.wsAccessMenu ul.wsNavigation .tabLabel:last-of-type {
+  box-shadow: none;
+}
+nav#wsAccessPoint div.wsAccessMenu ul.wsNavigation li {
+  box-shadow: inset -1px 0 #363636, inset -2px 0 #171818;
+  display: table-cell;
+  text-align: center;
+  padding: 4px 0;
+}
+nav#wsAccessPoint div.wsAccessMenu ul.wsNavigation li:last-of-type {
+  box-shadow: none;
+}
+nav#wsAccessPoint div.wsAccessMenu ul.wsNavigation li span {
+  position: relative;
+  top: 2px;
+}
+nav#wsAccessPoint div.wsAccessMenu ul.wsNavigation li span.summaryView {
+  display: inline-block;
+  background: no-repeat url("../img/mainSprite.png") 0 0;
+  cursor: pointer;
+  background-position: -640px 0;
+  width: 14px;
+  height: 15px;
+}
+nav#wsAccessPoint div.wsAccessMenu ul.wsNavigation li span.summaryView.disable {
+  cursor: default;
+}
+nav#wsAccessPoint div.wsAccessMenu ul.wsNavigation li span.summaryView:hover {
+  background-position: -640px -20px;
+}
+nav#wsAccessPoint div.wsAccessMenu ul.wsNavigation li span.summaryView.disable:hover {
+  background-position: -640px 0;
+}
+nav#wsAccessPoint div.wsAccessMenu ul.wsNavigation li span.listView {
+  display: inline-block;
+  background: no-repeat url("../img/mainSprite.png") 0 0;
+  cursor: pointer;
+  background-position: -660px 0;
+  width: 17px;
+  height: 15px;
+}
+nav#wsAccessPoint div.wsAccessMenu ul.wsNavigation li span.listView.disable {
+  cursor: default;
+}
+nav#wsAccessPoint div.wsAccessMenu ul.wsNavigation li span.listView:hover {
+  background-position: -660px -20px;
+}
+nav#wsAccessPoint div.wsAccessMenu ul.wsNavigation li span.listView.disable:hover {
+  background-position: -660px 0;
+}
+nav#wsAccessPoint div.wsAccessMenu ul.wsNavigation li span.circleView {
+  display: inline-block;
+  background: no-repeat url("../img/mainSprite.png") 0 0;
+  cursor: pointer;
+  background-position: -680px 0;
+  width: 15px;
+  height: 16px;
+  top: 3px;
+}
+nav#wsAccessPoint div.wsAccessMenu ul.wsNavigation li span.circleView.disable {
+  cursor: default;
+}
+nav#wsAccessPoint div.wsAccessMenu ul.wsNavigation li span.circleView:hover {
+  background-position: -680px -20px;
+}
+nav#wsAccessPoint div.wsAccessMenu ul.wsNavigation li span.circleView.disable:hover {
+  background-position: -680px 0;
+}
+nav#wsAccessPoint div.wsAccessMenu ul.wsNameList {
+  z-index: 5000;
+  height: auto;
+  min-width: 75px;
+  border: 1px solid #000000;
+  border-radius: 3px;
+  box-sizing: border-box;
+  background-color: transparent;
+  background-image: linear-gradient(to bottom, #2c2e2e 0% , #151717 100%  );
+  position: absolute;
+  overflow: hidden;
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+  position: relative;
+  width: 100%;
+}
+nav#wsAccessPoint div.wsAccessMenu ul.wsNameList .menuLabel {
+  display: block;
+  box-shadow: inset 0 -1px #000000, inset 0 1px rgba(54, 54, 54, 0.45);
+  padding: 9px 4px;
+  font-family: "Arial", sans-serif;
+  font-weight: 400;
+  font-stretch: normal;
+  font-size: 1.2rem;
+  line-height: 1;
+  text-transform: uppercase;
+  color: #cbcbcb;
+  cursor: pointer;
+}
+nav#wsAccessPoint div.wsAccessMenu ul.wsNameList .menuLabel:hover {
+  color: #ffffff;
+}
+nav#wsAccessPoint div.wsAccessMenu ul.wsNameList li {
+  display: block;
+  box-shadow: inset 0 -1px #000000, inset 0 1px rgba(54, 54, 54, 0.45);
+  padding: 9px 4px;
+  font-family: "Arial", sans-serif;
+  font-weight: 400;
+  font-stretch: normal;
+  font-size: 1.2rem;
+  line-height: 1;
+  text-transform: uppercase;
+  color: #cbcbcb;
+  cursor: pointer;
+  text-transform: none;
+  padding: 8px 12px;
+  position: relative;
+}
+nav#wsAccessPoint div.wsAccessMenu ul.wsNameList li:hover {
+  color: #ffffff;
+}
+nav#wsAccessPoint div.wsAccessMenu ul.wsNameList li span {
+  margin-left: 28px;
+  /*preserves space for icon in ::before pseudo element*/
+  display: inline-block;
+  width: calc(100% - 28px);
+  /*width minus margin-left*/
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  /*for long WS names*/
+}
+nav#wsAccessPoint div.wsAccessMenu ul.wsNameList li span::before {
+  position: absolute;
+  top: 7px;
+}
+nav#wsAccessPoint div.wsAccessMenu ul.wsNameList li span.myWorkspace::before {
+  left: 17px;
+}
+nav#wsAccessPoint div.wsAccessMenu ul.wsNameList li span.singleUserWS::before {
+  left: 18px;
+}
+nav#wsAccessPoint div.wsAccessMenu ul.wsNameList li span.multiUserWS::before {
+  left: 15px;
+}
+nav#wsAccessPoint div.wsAccessMenu ul.wsNameList li span.organizationWS::before {
+  left: 14px;
+}
+nav#wsAccessPoint div.wsAccessMenu ul.wsNameList li span.add-button {
+  margin-left: 0;
+  position: absolute;
+  top: 4px;
+  left: 12px;
+  width: 18px;
+  /*override needed due to span width: 100% above*/
+}
+nav#wsAccessPoint div.wsAccessMenu ul.wsNameList li .add-button::before,
+nav#wsAccessPoint div.wsAccessMenu ul.wsNameList li .add-button + span::before {
+  display: none;
+}
+nav#wsAccessPoint div.wsAccessMenu ul.wsNameList li:last-of-type {
+  font-family: "Arial Bold", "Arial", sans-serif;
+  font-weight: 600;
+  font-stretch: normal;
+  font-size: 1.3rem;
+  color: #07bcde;
+  text-align: center;
+  padding-top: 14px;
+  padding-bottom: 8px;
+}
+nav#wsAccessPoint div.wsAccessMenu ul.wsNameList li:last-of-type a {
+  color: #07bcde;
+}
+nav#wsAccessPoint.open a.wsNameCurrent {
+  box-shadow: none;
+}
+nav#wsAccessPoint.open a.wsNameCurrent span {
+  color: #07bcde;
+}
+nav#wsAccessPoint.open a.wsNameCurrent span::after {
+  border-top-color: #07bcde;
+}
+nav#wsAccessPoint.open div.wsAccessMenu {
+  display: block;
+}
+/*close .wsAccessPoint */
+/*end Workspace Access Point menu styles */

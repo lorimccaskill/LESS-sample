@@ -1,0 +1,192 @@
+/*begin Workspace Access Point menu styles */
+html {font-size: 10px;}
+.tui {
+	background-color: @medium-dark-gray;
+	color: @white;
+	.arial;
+	
+	a {
+		color: @white;
+        text-decoration: none;
+	}
+}
+
+nav#wsAccessPoint {
+	position: absolute;
+	top: 44px;
+	right: 120px;
+	z-index: 100;
+	text-align: right;
+	
+	ul {
+		margin: 0;
+		padding: 0;
+		
+		li {list-style: none;}
+	}
+	
+	a.wsNameCurrent span,
+	ul.wsNameList li span {
+		&::before {content: ' ';}
+		&.myWorkspace {
+			&::before {.myWorkspaceIcon;}
+		}
+		&.singleUserWS {
+			&::before {.singleUserWSIcon;}
+		}
+		&.multiUserWS {
+			&::before {.multiUserWSIcon;}
+		}
+		&.organizationWS {
+			&::before {.organizationWSIcon;}
+		}
+	}
+	
+	a.wsNameCurrent {
+		display: inline-block;
+		max-width: 450px;
+		.arial();
+		font-size: 1.7rem;
+		margin-left: 14px; /*in case of long WS name, icon will line up with .wsNameList icons in open menu below*/
+		padding-right: 20px; /*leaves room for arrow (span::after)*/
+		text-align: left; /*needed in case of long WS name*/
+		box-shadow: 0 4px @active-blue;
+		
+		span {
+			display: inline-block;
+			width: 100%;
+			overflow: hidden; /*prepping for implementation of .ellipsis mixnin*/
+			.ellipsis;
+			
+			&::before {margin-right: 10px;}
+			&::after {
+				content: ' ';
+				.arrowBottomSolid;
+				border-width: 5px;
+				border-top-color: @link-text;
+				position: absolute;
+				top: 6px;
+				right: 0;
+				margin-left: 10px;
+			}
+		}
+		&:hover {
+			span {
+				color: @active-blue;
+				&::after {border-top-color: @active-blue;}
+			}
+		}
+	}
+	div.wsAccessMenu {
+		display: none;
+		text-align: left;
+		min-width: 200px;
+		max-width: 484px; /*for long WS names*/
+		
+		ul.wsNavigation {
+			.tabMenu;
+			display: table;
+			width: 100%;
+			box-shadow: inset 1px 0 @black, inset -1px 0 @black;
+			
+			li {
+				.tabLabel;
+				display: table-cell;
+				text-align: center;
+				padding: 4px 0;
+				
+				span {
+					position: relative;
+					top: 2px;
+					
+					&.summaryView {.infoIconSmall;}
+					&.listView {.workspaceListIconSmall;}
+					&.circleView {
+						.workspaceCircleIconSmall;
+						top: 3px;
+					}
+				}
+			}
+		}
+		ul.wsNameList {
+			.norgiMenu;
+			.border-bottom-radius(4px);
+			.border-top-radius(0px);
+			position: relative;
+			width: 100%;
+			
+			li {
+				.menuLabel;
+				text-transform: none;
+				padding: 8px 12px;
+				position: relative;
+				
+				span {
+					margin-left: 28px; /*preserves space for icon in ::before pseudo element*/
+					display: inline-block;
+					width: ~"calc(100% - 28px)"; /*width minus margin-left*/
+					.ellipsis; /*for long WS names*/
+					
+					&::before {
+						position: absolute;
+						top: 7px;
+
+					}
+					&.myWorkspace {
+						&::before {
+							left: 17px;
+						}
+					}
+					&.singleUserWS {
+						&::before {
+							left: 18px;
+						}
+					}
+					&.multiUserWS {
+						&::before {
+							left: 15px;
+						}
+					}
+					&.organizationWS {
+						&::before {
+							left: 14px;
+						}
+					}
+				}
+				span.add-button {
+					margin-left: 0;
+					position: absolute;
+					top: 4px;
+					left: 12px;
+					width: 18px; /*override needed due to span width: 100% above*/
+				}
+				.add-button,
+				.add-button + span {
+					&::before {display: none;}
+				}
+				&:last-of-type {
+					.arial(bold);
+					font-size: 1.3rem;
+					color: @active-blue;
+					text-align: center;
+					padding-top: 14px;
+					padding-bottom: 8px;
+					
+					a {color: @active-blue;}
+				}
+			}
+		}
+	} /*close .wsAccessMenu */
+	
+	&.open {
+		a.wsNameCurrent {
+			box-shadow: none;
+			span {
+				color: @active-blue;
+				&::after {border-top-color: @active-blue;}
+			}
+		}
+		div.wsAccessMenu {display: block;}
+	}
+} /*close .wsAccessPoint */
+/*end Workspace Access Point menu styles */
